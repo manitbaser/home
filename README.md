@@ -1,13 +1,8 @@
-<div align="center">
-  <img alt="Logo" src="https://raw.githubusercontent.com/manitbaser/home/main/src/images/logo.png" width="100" />
-</div>
 <h1 align="center">
   manitbaser.github.io/home
 </h1>
 <p align="center">
   The third iteration of <a href="https://manitbaser.github.io/home/" target="_blank">Manit Baser</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a></p>
-
-![demo](https://raw.githubusercontent.com/manitbaser/home/main/src/images/demo.png)
 
 Originally inspired from [brittanychiang.com](https://brittanychiang.com)!
 
