@@ -203,7 +203,7 @@ const Jobs = () => {
               url
               img {
                 childImageSharp {
-                  gatsbyImageData(width: 80, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+                  gatsbyImageData(width: 80, placeholder: NONE, formats: [AUTO, WEBP, AVIF])
                 }
               }
             }

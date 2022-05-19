@@ -5,7 +5,7 @@ module.exports = {
     title: 'Manit Baser',
     description:
       'Manit Baser is a software engineer specializing in building large scale distributed systems at Microsoft.',
-    siteUrl: 'https://manitbaser.github.io/v2', // No trailing slash allowed!
+    siteUrl: 'https://manitbaser.github.io/home', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
   },
   plugins: [
@@ -155,5 +155,5 @@ module.exports = {
       },
     },
   ],
-  pathPrefix: '/v2',
+  pathPrefix: '/home',
 };
