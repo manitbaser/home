@@ -61,11 +61,11 @@ const StyledPic = styled.div`
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
-    background-color: var(--green);
+    background-color: var(--white);
 
     &:hover,
     &:focus {
-      background: transparent;
+      ${'' /* background: transparent; */}
       outline: 0;
 
       &:after {
@@ -76,7 +76,7 @@ const StyledPic = styled.div`
       .img {
         filter: none;
         mix-blend-mode: normal;
-        box-shadow: 20px 20px 100px rgba(0, 255, 255, 0.4);
+        ${'' /* box-shadow: 20px 20px 100px rgba(0, 255, 255, 0.4); */}
       }
     }
 
