@@ -157,7 +157,7 @@ const StyledProject = styled.li`
     z-index: 2;
     padding: 25px;
     border-radius: var(--border-radius);
-    background-color: var(--light-navy);
+    background-color: var(--cards-color);
     color: var(--light-slate);
     font-size: var(--fz-lg);
 
@@ -278,8 +278,7 @@ const StyledProject = styled.li`
         bottom: 0;
         z-index: 3;
         transition: var(--transition);
-        background-color: var(--navy);
-        mix-blend-mode: screen;
+        mix-blend-mode: multiply;
       }
     }
 

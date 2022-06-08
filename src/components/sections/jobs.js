@@ -175,11 +175,10 @@ const StyledPic = styled.div`
     position: relative;
     display: table;
     left: 40%;
-    background-color: rgba(0, 255, 255, 0.2);
+    background-color: rgba(87, 203, 255, 0.1);
     backdrop-filter: blur(5px);
     padding: 8px;
     border-radius: 5%;
-    box-shadow: 20px 20px 100px rgba(0, 255, 255, 0.4);
     .img {
       border-radius: 5%;
     }

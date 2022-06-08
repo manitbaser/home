@@ -61,30 +61,18 @@ const StyledPic = styled.div`
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
-    background-color: var(--white);
 
     &:hover,
     &:focus {
-      ${'' /* background: transparent; */}
-      outline: 0;
-
       &:after {
         top: 15px;
         left: 15px;
-      }
-
-      .img {
-        filter: none;
-        mix-blend-mode: normal;
-        ${'' /* box-shadow: 20px 20px 100px rgba(0, 255, 255, 0.4); */}
       }
     }
 
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
       transition: var(--transition);
     }
 

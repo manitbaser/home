@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext, useReducer } from "react";
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import { Head, Loader, Nav, Social, Email, Footer } from '@components';
 import { GlobalStyle, theme } from '@styles';
+import { reducer, initialState } from "./reducer";
 
 const StyledContent = styled.div`
   display: flex;
@@ -11,6 +12,8 @@ const StyledContent = styled.div`
 `;
 
 const Layout = ({ children, location }) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const { currentTheme } = state;
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
 
@@ -51,7 +54,8 @@ const Layout = ({ children, location }) => {
       <Head />
 
       <div id="root">
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={currentTheme}>
+        <AppContext.Provider value={{ ...state, dispatch }}>
           <GlobalStyle />
 
           <a className="skip-to-content" href="#content">
@@ -62,7 +66,7 @@ const Layout = ({ children, location }) => {
             <Loader finishLoading={() => setIsLoading(false)} />
           ) : (
             <StyledContent>
-              <Nav isHome={isHome} />
+              <Nav isHome={isHome} currentTheme={currentTheme} />
               <Social isHome={isHome} />
               <Email isHome={isHome} />
 
@@ -72,6 +76,7 @@ const Layout = ({ children, location }) => {
               </div>
             </StyledContent>
           )}
+          </AppContext.Provider>
         </ThemeProvider>
       </div>
     </>
@@ -84,3 +89,5 @@ Layout.propTypes = {
 };
 
 export default Layout;
+
+export const AppContext = createContext();

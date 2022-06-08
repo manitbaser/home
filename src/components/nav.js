@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -8,6 +8,7 @@ import { loaderDelay } from '@utils';
 import { useScrollDirection, usePrefersReducedMotion } from '@hooks';
 import { Menu } from '@components';
 import { IconLogo } from '@components/icons';
+import { AppContext } from './layout';
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -17,7 +18,7 @@ const StyledHeader = styled.header`
   padding: 0px 50px;
   width: 100%;
   height: var(--nav-height);
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: ${({ theme }) => theme.navBGColor};
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
@@ -38,7 +39,6 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
-        background-color: rgba(10, 25, 47, 0.85);
         box-shadow: 0 10px 30px -10px var(--navy-shadow);
       `};
 
@@ -57,7 +57,7 @@ const StyledNav = styled.nav`
   ${({ theme }) => theme.mixins.flexBetween};
   position: relative;
   width: 100%;
-  color: var(--lightest-slate);
+  color: ${({ theme }) => theme.navTextColor};
   font-family: var(--font-mono);
   counter-reset: item 0;
   z-index: 12;
@@ -66,14 +66,13 @@ const StyledNav = styled.nav`
     ${({ theme }) => theme.mixins.flexCenter};
 
     a {
-      color: var(--green);
       width: 42px;
       height: 42px;
 
       &:hover,
       &:focus {
         svg {
-          fill: var(--green-tint);
+          fill: ${({ theme }) => theme.navListColorHover};
         }
       }
 
@@ -84,6 +83,33 @@ const StyledNav = styled.nav`
       }
     }
   }
+`;
+
+const NavLink = styled.div`
+  display: block;
+  padding: 1rem;
+  transition: 10ms ease background-color;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const NavToggle = styled(NavLink)`
+  text-decoration: underline;
+  width: 80px;
+  height: 80px;
+  ${'' /* margin: 0 50px 0; */}
+  &:hover {
+        svg {
+          fill: ${({ theme }) => theme.navListColorHover};
+        }
+      }
+
+      svg {
+        ${'' /* fill: none; */}
+        transition: var(--transition);
+        user-select: none;        
+      }
 `;
 
 const StyledLinks = styled.div`
@@ -112,9 +138,12 @@ const StyledLinks = styled.div`
         &:before {
           content: '0' counter(item) '.';
           margin-right: 5px;
-          color: var(--green);
+          color: ${({ theme }) => theme.navListColor};
           font-size: var(--fz-xxs);
           text-align: right;
+        }
+        &:hover {
+          color: ${({ theme }) => theme.navListColor};
         }
       }
     }
@@ -127,7 +156,12 @@ const StyledLinks = styled.div`
   }
 `;
 
-const Nav = ({ isHome }) => {
+const Nav = ({ isHome, currentTheme }) => {
+  const { dispatch } = useContext(AppContext);
+
+  const toggleTheme = () => {
+    dispatch({ type: "toggleTheme" });
+  };
   const [isMounted, setIsMounted] = useState(!isHome);
   const scrollDirection = useScrollDirection('down');
   const [scrolledToTop, setScrolledToTop] = useState(true);
@@ -238,6 +272,43 @@ const Nav = ({ isHome }) => {
                 )}
               </TransitionGroup>
             </StyledLinks>
+
+            <NavToggle onClick={toggleTheme}>
+                {currentTheme.id === 'dark' ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    // fill="none"
+                    stroke= "#64ffda"
+                    // stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-activity"
+                  >
+                    <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                  </svg>
+                )
+                :
+                (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  // fill="none"
+                  stroke="#fc3d03"
+                  // strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="feather feather-activity">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+                )
+                }
+            </NavToggle>
 
             <TransitionGroup component={null}>
               {isMounted && (
