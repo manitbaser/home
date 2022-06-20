@@ -15,6 +15,10 @@ module.exports = {
       url: 'https://www.linkedin.com/in/manit-baser/',
     },
     {
+      name: 'ResearchGate',
+      url: 'https://www.researchgate.net/profile/Manit-Baser',
+    },
+    {
       name: 'Medium',
       url: 'https://manitbaser.medium.com/',
     },

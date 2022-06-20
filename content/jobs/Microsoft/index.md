@@ -9,5 +9,5 @@ img: 'microsoft.png'
 ---
 
 - Working in the Azure Specialized team.
-- Working on cutting edge Cloud Computing.
-- Creating systems that make millions of machines look like one big cloud, building highly scalable distributed systems.
+<!-- - Working on cutting edge Cloud Computing. -->
+<!-- - Creating systems that make millions of machines look like one big cloud, building highly scalable distributed systems. -->

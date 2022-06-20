@@ -3,7 +3,6 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
-// import { email } from '@config';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -75,7 +74,7 @@ const Hero = () => {
         <a href="https://www.microsoft.com/" target="_blank" rel="noreferrer">
           Microsoft
         </a>
-        . Occasionally, I build diverse projects in hackathons and work on research papers.
+        . Outside of work, I enjoy football, reading and speedcubing.
         {/* Previously, I've worked on building ASR to serve millions of voice search queries every day at{' '}
         <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">
           Flipkart

@@ -7,6 +7,7 @@ import {
   IconFolder,
   IconGitHub,
   IconFacebook,
+  IconResearchGate,
   IconLinkedin,
   IconLoader,
   IconLogo,
@@ -27,6 +28,8 @@ const Icon = ({ name }) => {
       return <IconGitHub />;
     case 'Facebook':
       return <IconFacebook />;
+    case 'ResearchGate':
+      return <IconResearchGate />;
     case 'Linkedin':
       return <IconLinkedin />;
     case 'Loader':

@@ -141,7 +141,7 @@ const About = () => {
               <a href="https://draup.com/">an AI-Driven enterprise start-up</a>, and{' '}
               <a href="https://www.sunmobility.co.in/">an EV-based start-up</a>.
             </p>
-            <p>Outside of work, I enjoy football, reading and speed-cubing.</p>
+            <p>Occasionally, I build diverse projects in hackathons and work on research papers.</p>
           </div>
         </StyledText>
 

@@ -5,6 +5,7 @@ export { default as IconFolder } from './folder';
 export { default as Icon } from './icon';
 export { default as IconGitHub } from './github';
 export { default as IconFacebook } from './facebook';
+export { default as IconResearchGate } from './researchGate';
 export { default as IconLinkedin } from './linkedin';
 export { default as IconLoader } from './loader';
 export { default as IconLogo } from './logo';
