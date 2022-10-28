@@ -169,6 +169,12 @@ const StyledTabPanel = styled.div`
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
   }
+  .team {
+    margin-bottom: 25px;
+    ${'' /* color: var(--light-slate); */}
+    font-family: var(--font-mono);
+    font-size: var(--fz-md);
+  }
 `;
 const StyledPic = styled.div`
   .wrapper {
@@ -197,6 +203,7 @@ const Jobs = () => {
             frontmatter {
               title
               company
+              team
               location
               range
               url
@@ -287,7 +294,8 @@ const Jobs = () => {
                   role="tab"
                   tabIndex={activeTabId === i ? '0' : '-1'}
                   aria-selected={activeTabId === i ? true : false}
-                  aria-controls={`panel-${i}`}>
+                  aria-controls={`panel-${i}`}
+                >
                   <span>{company}</span>
                 </StyledTabButton>
               );
@@ -299,7 +307,7 @@ const Jobs = () => {
           {jobsData &&
             jobsData.map(({ node }, i) => {
               const { frontmatter, html } = node;
-              const { title, url, company, range, img } = frontmatter;
+              const { title, url, company, range, img, team } = frontmatter;
               const image = getImage(img);
 
               return (
@@ -310,7 +318,8 @@ const Jobs = () => {
                     tabIndex={activeTabId === i ? '0' : '-1'}
                     aria-labelledby={`tab-${i}`}
                     aria-hidden={activeTabId !== i}
-                    hidden={activeTabId !== i}>
+                    hidden={activeTabId !== i}
+                  >
                     <h3>
                       <div className="cols">
                         <span>
@@ -321,7 +330,9 @@ const Jobs = () => {
                               {company}
                             </a>
                             <br />
-                            <br />
+                            <p className="team">{team}</p>
+                            {/* <br />
+                            <br /> */}
                             <p className="range">{range}</p>
                           </span>
                         </span>

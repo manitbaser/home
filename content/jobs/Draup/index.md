@@ -2,6 +2,7 @@
 date: '2020'
 title: 'Software Development Intern'
 company: 'Draup'
+team: 'Talent Platform'
 location: 'Bangalore'
 range: 'July 2021 - December 2021'
 url: 'https://draup.com/'

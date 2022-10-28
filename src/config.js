@@ -6,10 +6,10 @@ module.exports = {
       name: 'GitHub',
       url: 'https://github.com/manitbaser',
     },
-    {
-      name: 'Facebook',
-      url: 'https://www.facebook.com/manit.baser',
-    },
+    // {
+    //   name: 'Facebook',
+    //   url: 'https://www.facebook.com/manit.baser',
+    // },
     {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/manit-baser/',

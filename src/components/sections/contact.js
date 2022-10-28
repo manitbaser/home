@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { srConfig, email } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
-import { StaticImage } from 'gatsby-plugin-image';
+// import { StaticImage } from 'gatsby-plugin-image';
 
 const StyledContactSection = styled.section`
   ${'' /* max-width: 900px; */}
@@ -11,9 +11,11 @@ const StyledContactSection = styled.section`
   text-align: center;
 
   .inner {
-    display: grid;
+    ${
+  '' /* display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-gap: 50px;
+    grid-gap: 50px; */
+}
 
     @media (max-width: 768px) {
       display: block;
@@ -67,29 +69,30 @@ const Contact = () => {
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
       <div className="inner">
-      <div>
+        {/* <div> */}
         <h2 className="numbered-heading overline">What’s Next?</h2>
 
         <h2 className="title">Get In Touch</h2>
 
         <p>
-          If you have made it this far, I would love to get to know you as well. Let us connect! My
-          inbox is always open. Whether you have a question or just want to say hi, I’ll try my best
-          to get back to you!
+          If you have made it this far, I would love to get to know you as well. Let us connect!
+          <br />
+          My inbox is always open. Whether you have a question or just want to say hi, I’ll try my
+          best to get back to you!
         </p>
 
         <a className="email-link" href={`mailto:${email}`}>
           Say Hello
         </a>
-        </div>
-        <StaticImage
+        {/* </div> */}
+        {/* <StaticImage
           className="img"
           src="../../images/logo.svg"
           width={500}
           quality={95}
           formats={['AUTO', 'WEBP', 'AVIF']}
           alt="Headshot"
-        />
+        /> */}
       </div>
     </StyledContactSection>
   );

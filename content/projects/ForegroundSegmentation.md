@@ -1,5 +1,5 @@
 ---
-date: '4'
+date: '1'
 title: 'Real Time Foreground Segmentation for Video Sequences with Dynamic Background'
 title2: 'IEEE 17th India Council International Conference (INDICON)'
 github: 'https://github.com/manitbaser/Foreground-Segmentation-for-Video-Sequences-with-Dynamic-Background'
