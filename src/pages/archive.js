@@ -26,6 +26,43 @@ const StyledTableContainer = styled.div`
       }
     }
 
+    h4 {
+      &.title {
+        font-family: var(--font-mono);
+        padding-top: 15px;
+        padding-right: 20px;
+        color: var(--lightest-slate);
+        font-size: var(--fz-md);
+        font-weight: 600;
+      }
+    }
+
+    h5 {
+      color: var(--light-slate);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xs);
+      p {
+        color: var(--slate);
+        font-style: italic;
+        padding-top: 1px;
+        white-space: nowrap;
+      }
+
+      &.code {
+        font-family: var(--font-mono);
+        font-size: var(--fz-sm);
+        color: var(--green);
+        font-weight: 400;
+      }
+
+      &.overline {
+        font-family: var(--font-mono);
+        font-size: var(--fz-sm);
+        color: var(--slate);
+        font-weight: 400;
+      }
+    }
+
     tbody tr {
       &:hover,
       &:focus {
@@ -91,12 +128,7 @@ const StyledTableContainer = styled.div`
         line-height: 1.25;
       }
 
-      &.company {
-        font-size: var(--fz-lg);
-        white-space: nowrap;
-      }
-
-      &.tech {
+      &.authors {
         font-size: var(--fz-xxs);
         font-family: var(--font-mono);
         line-height: 1.5;
@@ -148,12 +180,12 @@ const ArchivePage = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <Helmet title="Archive" />
+      <Helmet title="Research and Hackathons" />
 
       <main>
         <header ref={revealTitle}>
-          <h1 className="big-heading">Archive</h1>
-          <p className="subtitle">A big list of things I’ve worked on</p>
+          <h1 className="big-heading">Research and Hackathons</h1>
+          <p className="subtitle">A list of things I’ve worked on</p>
         </header>
 
         <StyledTableContainer ref={revealTable}>
@@ -161,35 +193,30 @@ const ArchivePage = ({ location, data }) => {
             <thead>
               <tr>
                 <th>Year</th>
+                <th className="hide-on-mobile">Venue</th>
                 <th>Title</th>
-                <th className="hide-on-mobile">Made at</th>
-                <th className="hide-on-mobile">Built with</th>
-                <th>Link</th>
               </tr>
             </thead>
             <tbody>
               {projects.length > 0 &&
                 projects.map(({ node }, i) => {
-                  const { date, github, external, title, tech, company } = node.frontmatter;
+                  const { date, external, title, company, tech, venue } = node.frontmatter;
                   return (
                     <tr key={i} ref={el => (revealProjects.current[i] = el)}>
-                      <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
-
-                      <td className="title">{title}</td>
-
-                      <td className="company hide-on-mobile">
-                        {company ? <span>{company}</span> : <span>—</span>}
+                      <td>
+                        <h5 className="code">{`${new Date(date).getFullYear()}`}</h5>
                       </td>
-
-                      <td className="tech hide-on-mobile">
-                        {tech.length > 0 &&
-                          tech.map((item, i) => (
-                            <span key={i}>
-                              {item}
-                              {''}
-                              {i !== tech.length - 1 && <span className="separator">&middot;</span>}
-                            </span>
-                          ))}
+                      <td className="hide-on-mobile">
+                        <h5 className="overline hide-on-mobile">
+                          {venue ? <span>{venue}</span> : <span></span>}
+                        </h5>
+                      </td>
+                      <td>
+                        <h4 className="title">{title}</h4>
+                        <h5>
+                          {tech ? <span>{tech}</span> : <span></span>}
+                          <p>{company ? <span>{company}</span> : <span></span>}</p>
+                        </h5>
                       </td>
 
                       <td className="links">
@@ -197,11 +224,6 @@ const ArchivePage = ({ location, data }) => {
                           {external && (
                             <a href={external} aria-label="External Link">
                               <Icon name="External" />
-                            </a>
-                          )}
-                          {github && (
-                            <a href={github} aria-label="GitHub Link">
-                              <Icon name="GitHub" />
                             </a>
                           )}
                         </div>
@@ -234,10 +256,10 @@ export const pageQuery = graphql`
           frontmatter {
             date
             title
-            tech
-            github
             external
             company
+            tech
+            venue
           }
           html
         }

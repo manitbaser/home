@@ -1,10 +1,10 @@
 ---
-# date: '2022'
+date: '2022'
 title: 'Software Engineer'
 company: 'Microsoft'
 team: 'Azure Specialized'
 location: 'Bangalore, India'
-range: 'June 2022 - Present'
+range: 'June 2022 - August 2023'
 url: 'https://www.microsoft.com/'
 img: 'microsoft.png'
 ---

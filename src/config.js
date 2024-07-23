@@ -14,14 +14,18 @@ module.exports = {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/manit-baser/',
     },
+    // {
+    //   name: 'ResearchGate',
+    //   url: 'https://www.researchgate.net/profile/Manit-Baser',
+    // },
     {
-      name: 'ResearchGate',
-      url: 'https://www.researchgate.net/profile/Manit-Baser',
+      name: 'GoogleScholar',
+      url: 'https://scholar.google.com/citations?user=-JwV1SwAAAAJ&hl=en',
     },
-    {
-      name: 'Medium',
-      url: 'https://manitbaser.medium.com/',
-    },
+    // {
+    //   name: 'Medium',
+    //   url: 'https://manitbaser.medium.com/',
+    // },
   ],
 
   navLinks: [
@@ -34,7 +38,7 @@ module.exports = {
       url: '/#jobs',
     },
     {
-      name: 'Work',
+      name: 'Research',
       url: '/#projects',
     },
     {

@@ -70,15 +70,11 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m a software engineer specializing in building large scale distributed systems at{' '}
-        <a href="https://www.microsoft.com/" target="_blank" rel="noreferrer">
-          Microsoft
+        I’m a PhD student at the{' '}
+        <a href="https://nus.edu.sg" target="_blank" rel="noreferrer">
+          National University of Singapore
         </a>
-        . Outside of work, I enjoy football, reading and speedcubing.
-        {/* Previously, I've worked on building ASR to serve millions of voice search queries every day at{' '}
-        <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">
-          Flipkart
-        </a>. */}
+        .
       </p>
     </>
   );

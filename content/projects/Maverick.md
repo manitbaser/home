@@ -1,12 +1,14 @@
 ---
-date: '6'
+date: '2021'
 title: 'National Finalists'
-title2: 'Team UnScript | Maverick 2.0 Hackathon | AB InBev'
+title2: 'Maverick 2.0 Hackathon, AB InBev'
 external: 'https://unstop.com/submissions-round/round-3-technical-prototype-submission-21978'
-tech:
+authors:
   -
-company: 'AB InBev'
-showInProjects: true
+tech: Team UnScript
+company: 'Maverick 2.0 Hackathon, AB InBev'
+showInProjects: false
+venue: 'Hackathon'
 ---
 
 Secured a position in the top 9 teams in the Hackathon's National Grand Finale, with more than 750 teams, and showcased our product to business leaders of AB InBev.

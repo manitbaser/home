@@ -123,25 +123,31 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Manit. I graduated from{' '}
+              Hello! I am Manit. I graduated from{' '}
               <a
                 href="https://www.linkedin.com/school/birla-institute-of-technology-and-science-pilani/"
                 target="_blank"
                 rel="noreferrer">
                 Birla Institute of Technology and Science, Pilani, India
               </a>
-              , where I pursued B.E. in Electrical and Electronics. I like solving real-world
-              problems through the applications of Deep Learning, Computer Vision and Software
-              Development.
+              , where I pursued B.E. in Electrical and Electronics.
             </p>
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
+              Previously, I’ve had the privilege of working at{' '}
               <a href="https://www.microsoft.com/">a pretty huge corporation</a>,{' '}
               <a href="https://www.flipkart.com/">an E-Commerce marketplace</a>,{' '}
               <a href="https://draup.com/">an AI-Driven enterprise start-up</a>, and{' '}
               <a href="https://www.sunmobility.co.in/">an EV-based start-up</a>.
             </p>
-            <p>Occasionally, I build diverse projects in hackathons and work on research papers.</p>
+            <p>
+              Fast-forward to today, I'm working with{' '}
+              <a href="https://cde.nus.edu.sg/ece/staff/mohan-gurusamy/">Dr. Mohan Gurusamy</a> and{' '}
+              <a href="https://www.dinil.net">Dr. Dinil Mon Divakaran</a> at{' '}
+              <a href="https://nus.edu.sg" target="_blank" rel="noreferrer">
+                NUS
+              </a>
+              , where my research is in the domain of Network Security.
+            </p>
           </div>
         </StyledText>
 

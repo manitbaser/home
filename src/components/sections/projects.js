@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React, { useEffect, useRef } from 'react';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 // import { Link } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
@@ -36,11 +36,6 @@ const StyledProjectsSection = styled.section`
     @media (max-width: 1080px) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
-  }
-
-  .more-button {
-    ${({ theme }) => theme.mixins.button};
-    margin: 80px auto 0;
   }
 `;
 
@@ -144,7 +139,7 @@ const StyledProject = styled.li`
     }
   }
 
-  .project-tech-list {
+  .project-authors-list {
     display: flex;
     align-items: flex-end;
     flex-grow: 1;
@@ -173,14 +168,14 @@ const Projects = () => {
           fileAbsolutePath: { regex: "/projects/" }
           frontmatter: { showInProjects: { ne: false } }
         }
-        sort: { fields: [frontmatter___date], order: ASC }
+        sort: { fields: [frontmatter___date], order: DESC }
       ) {
         edges {
           node {
             frontmatter {
               title
               title2
-              tech
+              authors
               github
               external
             }
@@ -191,7 +186,6 @@ const Projects = () => {
     }
   `);
 
-  const [showMore, setShowMore] = useState(false);
   const revealTitle = useRef(null);
   const revealArchiveLink = useRef(null);
   const revealProjects = useRef([]);
@@ -210,11 +204,11 @@ const Projects = () => {
   const GRID_LIMIT = 6;
   const projects = data.projects.edges.filter(({ node }) => node);
   const firstSix = projects.slice(0, GRID_LIMIT);
-  const projectsToShow = showMore ? projects : firstSix;
+  const projectsToShow = firstSix;
 
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { github, external, title, title2, tech } = frontmatter;
+    const { github, external, title, title2 } = frontmatter;
 
     return (
       <div className="project-inner">
@@ -256,26 +250,28 @@ const Projects = () => {
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         </header>
 
-        <footer>
-          {tech && (
-            <ul className="project-tech-list">
-              {tech.map((tech, i) => (
-                <li key={i}>{tech}</li>
+        {/* <footer>
+          {authors && (
+            <ul className="project-authors-list">
+              {authors.map((authors, i) => (
+                <li key={i}>{authors}</li>
               ))}
             </ul>
           )}
-        </footer>
+        </footer> */}
       </div>
     );
   };
 
   return (
-    <StyledProjectsSection>
-      <h2 ref={revealTitle}>Research Papers, Hackathons and Other Projects</h2>
+    <StyledProjectsSection id="projects">
+      <h2 className="numbered-heading" ref={revealTitle}>
+        Research and Hackathons
+      </h2>
 
-      {/* <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
-        view the archive
-      </Link> */}
+      <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
+        View the entire list
+      </Link>
 
       <ul className="projects-grid">
         {prefersReducedMotion ? (
@@ -307,10 +303,6 @@ const Projects = () => {
           </TransitionGroup>
         )}
       </ul>
-
-      <button className="more-button" onClick={() => setShowMore(!showMore)}>
-        Show {showMore ? 'Less' : 'More'}
-      </button>
     </StyledProjectsSection>
   );
 };

@@ -3,7 +3,7 @@ date: '1'
 title: 'CoviFight'
 cover: './covifight.png'
 github: 'https://github.com/manitbaser/CoviFight'
-tech:
+authors:
   -
 #   - VS Code
 ---

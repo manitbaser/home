@@ -4,7 +4,7 @@ title: 'Interactive Voice Response Chatbot'
 cover: './ivr.png'
 github: 'https://github.com/manitbaser/Interactive-Voice-Response-Chatbot'
 # external: 'https://spotify-profile.herokuapp.com/'
-tech:
+authors:
   - Python
   - JavaScript
   - Rasa 2.0

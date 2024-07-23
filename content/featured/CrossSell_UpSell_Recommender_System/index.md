@@ -3,7 +3,7 @@ date: '3'
 title: 'Cross Sell | Up Sell Recommender System'
 cover: './sample.png'
 github: 'https://github.com/manitbaser/Cross_Sell-Up_Sell_Recommender_System'
-tech:
+authors:
   - Python
   - Flask
   - CSS

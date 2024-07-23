@@ -1,12 +1,14 @@
 ---
-date: '9'
+date: '2020'
 title: 'The Wolfram Award'
-title2: 'Team CoviFight | COVID19 Hack Challenge | Wolfram Research'
+title2: 'COVID19 Hack Challenge | Wolfram Research'
 external: 'https://covid19hack.devpost.com/project-gallery'
-tech:
+authors:
   -
-company: 'Wolfram Research'
-showInProjects: true
+tech: 'Team CoviFight'
+company: 'COVID19 Hack Challenge, Wolfram Research'
+showInProjects: false
+venue: 'Hackathon'
 ---
 
 Aimed to develop and launch open-source code using AI and/or blockchain to combat COVID-19, reduce risks from future infectious outbreaks, and cope with the COVID-19 pandemic situation.
