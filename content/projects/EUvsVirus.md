@@ -7,7 +7,7 @@ authors:
   -
 tech: Team Covifight
 company: '#EUvsVirus, European Commission'
-showInProjects: true
+
 venue: 'Hackathon'
 ---
 

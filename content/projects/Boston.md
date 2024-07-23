@@ -7,7 +7,7 @@ authors:
   -
 tech: Team CoviFight
 company: The Resiliency Challenge, Boston University
-showInProjects: false
+
 venue: 'Hackathon'
 ---
 

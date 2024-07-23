@@ -8,7 +8,7 @@ authors:
   -
 tech: Manit Baser, Miloni Mittal, Devesh Samaiya
 company: 'IEEE 17th India Council International Conference'
-showInProjects: false
+
 venue: 'Conference'
 ---
 

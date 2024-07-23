@@ -7,7 +7,7 @@ authors:
   -
 tech: Aditya Mithal, Manit Baser, Dhiraj
 company: 'IEEE 15th International Conference on Industrial and Information Systems'
-showInProjects: false
+
 venue: 'Conference'
 ---
 

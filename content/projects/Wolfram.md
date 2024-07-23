@@ -7,7 +7,7 @@ authors:
   -
 tech: 'Team CoviFight'
 company: 'COVID19 Hack Challenge, Wolfram Research'
-showInProjects: false
+
 venue: 'Hackathon'
 ---
 

@@ -7,6 +7,6 @@ authors:
   -
 tech: Divya D Kulkarni, Manit Baser, Mohan Gurusamy
 company: 'IEEE 100th Vehicular Technology Conference'
-showInProjects: true
+
 venue: 'Conference'
 ---

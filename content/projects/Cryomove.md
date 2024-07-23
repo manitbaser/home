@@ -7,6 +7,6 @@ tech: 'Tapasvi Bhatt, Manit Baser, Abhishek Tyagi, Yin Kwee Ng'
 authors:
   -
 company: 'Applied Thermal Engineering (IF: 6.1)'
-showInProjects: true
+
 venue: 'Journal'
 ---

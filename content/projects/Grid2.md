@@ -8,7 +8,7 @@ authors:
   -
 tech: Team Indus
 company: 'GRiD 2.0, Flipkart'
-showInProjects: true
+
 venue: 'Hackathon'
 ---
 

@@ -7,7 +7,7 @@ authors:
   -
 tech: Team UnScript
 company: 'Maverick 2.0 Hackathon, AB InBev'
-showInProjects: false
+
 venue: 'Hackathon'
 ---
 

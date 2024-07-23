@@ -7,6 +7,6 @@ tech: 'Azure Cloud Track'
 authors:
   -
 company: 'Global Hackathon, Microsoft'
-showInProjects: true
+
 venue: 'Hackathon'
 ---

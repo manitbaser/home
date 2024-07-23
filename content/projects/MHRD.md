@@ -6,7 +6,7 @@ external: 'https://www.mic.gov.in/assets/wp_images/Shortlisted%20Teams%20for%20M
 authors:
   -
 company: 'MHRD Samadhan Challenge, MHRD, India'
-showInProjects: false
+
 venue: 'Hackathon'
 ---
 

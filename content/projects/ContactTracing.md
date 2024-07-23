@@ -7,6 +7,6 @@ authors:
   -
 tech: 'Gaurang Bansal, Manit Baser, Vinay Chamola'
 company: 'IEEE Internet of Things Magazine'
-showInProjects: true
+
 venue: 'Journal'
 ---

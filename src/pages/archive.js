@@ -16,8 +16,14 @@ const StyledTableContainer = styled.div`
     margin: 50px -10px;
   }
 
+  h2 {
+    padding: 20px;
+    font-size: clamp(50px, 8vw, 50px);
+  }
+
   table {
     width: 100%;
+    margin-bottom: 100px;
     border-collapse: collapse;
 
     .hide-on-mobile {
@@ -27,13 +33,22 @@ const StyledTableContainer = styled.div`
     }
 
     h4 {
+      font-family: var(--font-mono);
+      padding-top: 15px;
+      padding-right: 20px;
+      font-size: var(--fz-md);
+      font-weight: 600;
+
       &.title {
-        font-family: var(--font-mono);
-        padding-top: 15px;
-        padding-right: 20px;
         color: var(--lightest-slate);
-        font-size: var(--fz-md);
-        font-weight: 600;
+      }
+
+      &.coursecode {
+        color: var(--slate);
+      }
+
+      &.course {
+        color: var(--green);
       }
     }
 
@@ -180,57 +195,135 @@ const ArchivePage = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <Helmet title="Research and Hackathons" />
+      <Helmet title="Highlights" />
 
       <main>
         <header ref={revealTitle}>
-          <h1 className="big-heading">Research and Hackathons</h1>
-          <p className="subtitle">A list of things I’ve worked on</p>
+          <h1 className="big-heading">Highlights</h1>
+          <p className="subtitle">A list of things I’ve done</p>
         </header>
 
         <StyledTableContainer ref={revealTable}>
+          <h2>Research</h2>
           <table>
             <thead>
               <tr>
                 <th>Year</th>
                 <th className="hide-on-mobile">Venue</th>
-                <th>Title</th>
+                {/* <th>Title</th> */}
               </tr>
             </thead>
             <tbody>
               {projects.length > 0 &&
-                projects.map(({ node }, i) => {
-                  const { date, external, title, company, tech, venue } = node.frontmatter;
-                  return (
-                    <tr key={i} ref={el => (revealProjects.current[i] = el)}>
-                      <td>
-                        <h5 className="code">{`${new Date(date).getFullYear()}`}</h5>
-                      </td>
-                      <td className="hide-on-mobile">
-                        <h5 className="overline hide-on-mobile">
-                          {venue ? <span>{venue}</span> : <span></span>}
-                        </h5>
-                      </td>
-                      <td>
-                        <h4 className="title">{title}</h4>
-                        <h5>
-                          {tech ? <span>{tech}</span> : <span></span>}
-                          <p>{company ? <span>{company}</span> : <span></span>}</p>
-                        </h5>
-                      </td>
+                projects
+                  .filter(
+                    ({ node }) =>
+                      node.frontmatter.venue !== 'Teaching' &&
+                      node.frontmatter.venue !== 'Hackathon',
+                  )
+                  .map(({ node }, i) => {
+                    const { date, external, title, company, tech, venue } = node.frontmatter;
+                    return (
+                      <tr key={i} ref={el => (revealProjects.current[i] = el)}>
+                        <td>
+                          <h5 className="code">{`${new Date(date).getFullYear()}`}</h5>
+                        </td>
+                        <td className="hide-on-mobile">
+                          <h5 className="overline hide-on-mobile">
+                            {venue ? <span>{venue}</span> : <span></span>}
+                          </h5>
+                        </td>
+                        <td>
+                          <h4 className="title">{title}</h4>
+                          <h5>
+                            {tech ? <span>{tech}</span> : <span></span>}
+                            <p>{company ? <span>{company}</span> : <span></span>}</p>
+                          </h5>
+                        </td>
 
-                      <td className="links">
-                        <div>
-                          {external && (
-                            <a href={external} aria-label="External Link">
-                              <Icon name="External" />
-                            </a>
-                          )}
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })}
+                        <td className="links">
+                          <div>
+                            {external && (
+                              <a href={external} aria-label="External Link">
+                                <Icon name="External" />
+                              </a>
+                            )}
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+            </tbody>
+          </table>
+
+          <h2>Hackathons</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th>
+                {/* <th>Hackathon</th> */}
+              </tr>
+            </thead>
+            <tbody>
+              {projects.length > 0 &&
+                projects
+                  .filter(({ node }) => node.frontmatter.venue === 'Hackathon')
+                  .map(({ node }, i) => {
+                    const { date, external, title, company, tech } = node.frontmatter;
+                    return (
+                      <tr key={i} ref={el => (revealProjects.current[i] = el)}>
+                        <td>
+                          <h5 className="code">{`${new Date(date).getFullYear()}`}</h5>
+                        </td>
+                        <td>
+                          <h4 className="title">{title}</h4>
+                          <h5>
+                            {tech ? <span>{tech}</span> : <span></span>}
+                            <p>{company ? <span>{company}</span> : <span></span>}</p>
+                          </h5>
+                        </td>
+
+                        <td className="links">
+                          <div>
+                            {external && (
+                              <a href={external} aria-label="External Link">
+                                <Icon name="External" />
+                              </a>
+                            )}
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+            </tbody>
+          </table>
+
+          <h2>Teaching</h2>
+          <table>
+            <tbody>
+              {projects.length > 0 &&
+                projects
+                  .filter(({ node }) => node.frontmatter.venue === 'Teaching')
+                  .map(({ node }, i) => {
+                    const { title, title2, company, tech } = node.frontmatter;
+                    return (
+                      <tr key={i} ref={el => (revealProjects.current[i] = el)}>
+                        <td>
+                          <td>
+                            <h4 className="coursecode">{title2}</h4>
+                          </td>
+                          <td>
+                            <h4 className="course">{title}</h4>
+                          </td>
+                          <td>
+                            <h4 className="title">{company}</h4>
+
+                            <h5>{tech ? <span>{tech}</span> : <span></span>}</h5>
+                          </td>
+                        </td>
+                      </tr>
+                    );
+                  })}
             </tbody>
           </table>
         </StyledTableContainer>
@@ -256,6 +349,7 @@ export const pageQuery = graphql`
           frontmatter {
             date
             title
+            title2
             external
             company
             tech
