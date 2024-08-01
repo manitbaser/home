@@ -309,17 +309,15 @@ const ArchivePage = ({ location, data }) => {
                     return (
                       <tr key={i} ref={el => (revealProjects.current[i] = el)}>
                         <td>
-                          <td>
-                            <h4 className="coursecode">{title2}</h4>
-                          </td>
-                          <td>
-                            <h4 className="course">{title}</h4>
-                          </td>
-                          <td>
-                            <h4 className="title">{company}</h4>
+                          <h4 className="coursecode">{title2}</h4>
+                        </td>
+                        <td>
+                          <h4 className="course">{title}</h4>
+                        </td>
+                        <td>
+                          <h4 className="title">{company}</h4>
 
-                            <h5>{tech ? <span>{tech}</span> : <span></span>}</h5>
-                          </td>
+                          <h5>{tech ? <span>{tech}</span> : <span></span>}</h5>
                         </td>
                       </tr>
                     );

@@ -145,8 +145,8 @@ const About = () => {
               <a href="https://www.dinil.net">Dr. Dinil Mon Divakaran</a> at{' '}
               <a href="https://nus.edu.sg" target="_blank" rel="noreferrer">
                 NUS
-              </a>
-              , where my research is in the domain of Network Security.
+              </a>{' '}
+              as a PhD student, where my research is in the domain of Network Security.
             </p>
           </div>
         </StyledText>
@@ -155,7 +155,7 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
+              src="../../images/me.png"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
