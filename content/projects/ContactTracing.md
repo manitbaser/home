@@ -2,7 +2,7 @@
 date: '2024'
 title: 'Three-Tier Indirect Tracing Model for Enhancing Epidemic Surveillance'
 title2: '2024 IEEE Internet of Things Magazine'
-# external: 'https://www.sciencedirect.com/science/article/abs/pii/S1359431124016302'
+external: 'https://ieeexplore.ieee.org/abstract/document/10643985'
 authors:
   -
 tech: 'Gaurang Bansal, Manit Baser, Vinay Chamola'
